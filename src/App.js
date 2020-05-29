@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Post from "./components/Post";
 import axios from "axios";
 import "./App.css";
+import styled from 'styled-components';
 
 function App() {
   const [nasa, setNasa] = useState([]);
@@ -16,10 +17,13 @@ function App() {
     .catch(error => console.log("Something went wrong: ", error));
   }, []);
 
+  const App = styled.div`
+  background: red;
+  `;
   return (
-    <div className="App">
+    <App>
       <Post nasa = {nasa} />
-    </div>
+    </App>
   );
 }
 
